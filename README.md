@@ -1,16 +1,13 @@
-# hello-next-docker
+# hello-next-python
 
-Minimal Next.js app packaged for Docker + docker compose.
+Next.js + FastAPI (Python) в Docker Compose.
 
-## Local run
+- `web` (Next.js) на порту 3000, проброшен наружу на 80
+- `api` (FastAPI) на 8000, доступ из Next.js через `/py/*` (см. `next.config.js`)
 
+## Локально (если нужно)
 ```bash
 docker compose up -d --build
-# open http://localhost/
 ```
 
-## Files
-
-- `Dockerfile` builds app
-- `docker-compose.yml` exposes 80->3000
-- `pages/index.js` simple page
+Открой `http://localhost` и нажми кнопку — появится ответ Python.
